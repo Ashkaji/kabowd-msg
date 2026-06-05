@@ -1,34 +1,9 @@
-services:
-  # =========================
-  # N8N - Workflow Automation
-  # =========================
-  - type: web
-    name: n8n
-    env: docker
-    plan: starter
-    dockerfilePath: ./n8n/Dockerfile
-    region: frankfurt
-    envVars:
-      - key: N8N_HOST
-        value: n8n.onrender.com
-      - key: N8N_PORT
-        value: 5678
-      - key: N8N_PROTOCOL
-        value: https
-      - key: WEBHOOK_URL
-        value: https://n8n.onrender.com/
-      - key: GENERIC_TIMEZONE
-        value: Africa/Lome
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
-      - key: DB_TYPE
-        value: sqlite
-      - key: DB_SQLITE_FILENAME
-        value: /data/n8n.sqlite
+# ================================================
+# WAHA Blueprint - Render Free Tier
+# Deploy via: https://render.com/deploy
+# ================================================
 
-  # =========================
-  # WAHA - WhatsApp HTTP API
-  # =========================
+services:
   - type: web
     name: waha
     env: docker
@@ -40,11 +15,10 @@ services:
       - key: PORT
         value: 3000
       - key: WAHA_BASE_URL
-        value: https://waha.onrender.com     # ⚠️ Mettre à jour avec l'URL Render réelle
+        value: https://waha.onrender.com     # Update after deploy
 
       # --- Sécurité : API Key & Dashboard ---
-      # ⚠️ Ces valeurs sensibles doivent être surchargées via les "Secret Files" ou
-      #    l'interface Render (Environment > Secret) pour ne pas apparaître en clair.
+      # ⚠️ OVERRIDE THESE via Render Dashboard > Environment > Secrets
       - key: WAHA_API_KEY
         value: sk_live_51NxA2B3C4D5E6F7G8H9I0J
       - key: WAHA_DASHBOARD_ENABLED

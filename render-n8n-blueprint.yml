@@ -1,0 +1,29 @@
+# ================================================
+# N8N Blueprint - Render Free Tier
+# Deploy via: https://render.com/deploy
+# ================================================
+
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: starter
+    dockerfilePath: ./n8n/Dockerfile
+    region: frankfurt
+    envVars:
+      - key: N8N_HOST
+        value: n8n.onrender.com
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_URL
+        value: https://n8n.onrender.com/
+      - key: GENERIC_TIMEZONE
+        value: Africa/Lome
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
+      - key: DB_TYPE
+        value: sqlite
+      - key: DB_SQLITE_FILENAME
+        value: /data/n8n.sqlite
