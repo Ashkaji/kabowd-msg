@@ -6,8 +6,8 @@ Instead of one mega-blueprint, we use **two independent Render blueprints** that
 
 | Service | Blueprint | Port | Cost |
 |---|---|---|---|
-| **N8N** | `render-n8n-blueprint.yml` | 5678 | ✅ Free |
-| **WAHA** | `render-waha-blueprint.yml` | 3000 | ✅ Free |
+| **N8N** | `render-n8n-blueprint.yaml` | 5678 | ✅ Free |
+| **WAHA** | `render-waha-blueprint.yaml` | 3000 | ✅ Free |
 
 Each service gets its own 750 free hours/month quota. Perfect for production.
 
@@ -19,7 +19,7 @@ Each service gets its own 750 free hours/month quota. Perfect for production.
 1. Go to [render.com](https://render.com)
 2. Click **New > Blueprint**
 3. Connect your GitHub repo
-4. Select `render-n8n-blueprint.yml` as the blueprint file
+4. Select `render-n8n-blueprint.yaml` as the blueprint file
 5. Click **Deploy**
 
 ### Option B: Direct Link (if repo is public)
@@ -38,7 +38,7 @@ https://render.com/deploy?repo=YOUR_GITHUB_REPO_URL&buildFilter=dockerfile
 
 1. Go to [render.com](https://render.com)
 2. Click **New > Blueprint** again
-3. Select `render-waha-blueprint.yml`
+3. Select `render-waha-blueprint.yaml`
 4. Click **Deploy**
 
 **After deploy:**

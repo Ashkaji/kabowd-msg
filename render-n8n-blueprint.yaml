@@ -1,5 +1,5 @@
 # ================================================
-# N8N Blueprint - Render Free Tier
+# N8N Blueprint - Render Free Tier (NO PAYMENT)
 # Deploy via: https://render.com/deploy
 # ================================================
 
@@ -7,7 +7,6 @@ services:
   - type: web
     name: n8n
     env: docker
-    plan: starter
     dockerfilePath: ./n8n/Dockerfile
     region: frankfurt
     envVars:

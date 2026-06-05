@@ -1,5 +1,5 @@
 # ================================================
-# WAHA Blueprint - Render Free Tier
+# WAHA Blueprint - Render Free Tier (NO PAYMENT)
 # Deploy via: https://render.com/deploy
 # ================================================
 
@@ -7,7 +7,6 @@ services:
   - type: web
     name: waha
     env: docker
-    plan: starter
     dockerfilePath: ./waha/Dockerfile
     region: frankfurt
     envVars:
@@ -15,10 +14,9 @@ services:
       - key: PORT
         value: 3000
       - key: WAHA_BASE_URL
-        value: https://waha.onrender.com     # Update after deploy
+        value: https://waha.onrender.com
 
       # --- Sécurité : API Key & Dashboard ---
-      # ⚠️ OVERRIDE THESE via Render Dashboard > Environment > Secrets
       - key: WAHA_API_KEY
         value: sk_live_51NxA2B3C4D5E6F7G8H9I0J
       - key: WAHA_DASHBOARD_ENABLED
