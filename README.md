@@ -6,8 +6,8 @@ Production-grade automation platform combining **N8N** (workflow orchestration) 
 
 ```
 project-root/
-├── render-n8n-blueprint.yml        # Blueprint 1: N8N service
-├── render-waha-blueprint.yml       # Blueprint 2: WAHA service
+├── render-n8n-blueprint.yaml        # Blueprint 1: N8N service
+├── render-waha-blueprint.yaml       # Blueprint 2: WAHA service
 ├── DEPLOYMENT.md                   # Step-by-step deployment guide ⭐
 ├── n8n/
 │   └── Dockerfile                  # N8N container config
@@ -34,12 +34,12 @@ project-root/
 
 2. **Deploy N8N**
    - Go to [render.com/deploy](https://render.com)
-   - Select `render-n8n-blueprint.yml`
+   - Select `render-n8n-blueprint.yaml`
    - Click **Deploy**
    - Wait ~3 min, note the URL: `https://n8n-xyz.onrender.com`
 
 3. **Deploy WAHA**
-   - Repeat step 2 with `render-waha-blueprint.yml`
+   - Repeat step 2 with `render-waha-blueprint.yaml`
    - Note the URL: `https://waha-xyz.onrender.com`
 
 👉 **Full guide with troubleshooting:** See [`DEPLOYMENT.md`](./DEPLOYMENT.md)
@@ -78,7 +78,7 @@ Never commit sensitive values. On Render Dashboard:
    - `N8N_ENCRYPTION_KEY` (auto-generated ✅)
 
 ### Environment Variables
-- `.yml` files use defaults (for non-sensitive configs)
+- `.yaml` files use defaults (for non-sensitive configs)
 - **Always override** in Render dashboard for production
 
 ---
@@ -99,14 +99,14 @@ Never commit sensitive values. On Render Dashboard:
 ## 🛠️ Configuration
 
 ### N8N Environment Variables
-See `render-n8n-blueprint.yml`:
+See `render-n8n-blueprint.yaml`:
 - `N8N_HOST`: Public URL
 - `N8N_PORT`: 5678
 - `DB_TYPE`: sqlite (free!)
 - `WEBHOOK_URL`: Where external services callback
 
 ### WAHA Environment Variables
-See `render-waha-blueprint.yml`:
+See `render-waha-blueprint.yaml`:
 - `WAHA_BASE_URL`: Public URL
 - `WHATSAPP_DEFAULT_ENGINE`: NOWEB (lightweight)
 - `WAHA_HOOK_URL`: Where to send webhooks (→ N8N)
