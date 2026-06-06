@@ -1,30 +1,29 @@
 # Fly.io Configuration for WAHA
 
 app = "kabowd-waha"
-primary_region = "iad"  # Northern Virginia (good for America)
-# Or use "ams" for Amsterdam, "cdg" for Paris (closer to Africa)
+primary_region = "cdg"
 
 [build]
 dockerfile = "./waha/Dockerfile"
 
 [env]
-PORT=3000
-WHATSAPP_DEFAULT_ENGINE=NOWEB
-WAHA_SESSION_NAME=default
-WHATSAPP_START_SESSION=default
-WAHA_RESTART_ALL_SESSIONS=true
-WAHA_BROWSER_HEADLESS=true
-WAHA_PRINT_QR=true
-WAHA_HOOK_EVENTS=message,message.reaction,presence.update,chat.update
-WAHA_MEDIA_STORAGE=local
-WAHA_LOCAL_STORE_BASE_DIR=/var/lib/waha/storage
-WHATSAPP_FILES_FOLDER=/app/whatsapp_files
-WAHA_LOG_FORMAT=json
-WAHA_LOG_LEVEL=info
-WAHA_DASHBOARD_ENABLED=true
-WAHA_DASHBOARD_USERNAME=admin_waha
-WHATSAPP_SESSION_NOT_START_AND_WAIT=true
-WHATSAPP_FILES_LIFETIME=86400
+PORT = "3000"
+WHATSAPP_DEFAULT_ENGINE = "NOWEB"
+WAHA_SESSION_NAME = "default"
+WHATSAPP_START_SESSION = "default"
+WAHA_RESTART_ALL_SESSIONS = "true"
+WHATSAPP_SESSION_NOT_START_AND_WAIT = "true"
+WAHA_BROWSER_HEADLESS = "true"
+WAHA_PRINT_QR = "true"
+WAHA_HOOK_EVENTS = "message,message.reaction,presence.update,chat.update"
+WAHA_MEDIA_STORAGE = "local"
+WAHA_LOCAL_STORE_BASE_DIR = "/var/lib/waha/storage"
+WHATSAPP_FILES_FOLDER = "/app/whatsapp_files"
+WHATSAPP_FILES_LIFETIME = "86400"
+WAHA_LOG_FORMAT = "json"
+WAHA_LOG_LEVEL = "info"
+WAHA_DASHBOARD_ENABLED = "true"
+WAHA_DASHBOARD_USERNAME = "admin_waha"
 
 [[services]]
 internal_port = 3000
