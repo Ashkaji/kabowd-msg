@@ -1,20 +1,19 @@
 # Fly.io Configuration for N8N
 
 app = "kabowd-n8n"
-primary_region = "iad"  # Northern Virginia (good for America)
-# Or use "ams" for Amsterdam, "cdg" for Paris (closer to Africa)
+primary_region = "cdg"
 
 [build]
 dockerfile = "./n8n/Dockerfile"
 
 [env]
-N8N_HOST=kabowd-n8n.fly.dev
-N8N_PORT=5678
-N8N_PROTOCOL=https
-WEBHOOK_URL=https://kabowd-n8n.fly.dev/
-GENERIC_TIMEZONE=Africa/Lome
-DB_TYPE=sqlite
-DB_SQLITE_FILENAME=/data/n8n.sqlite
+N8N_HOST = "kabowd-n8n.fly.dev"
+N8N_PORT = "5678"
+N8N_PROTOCOL = "https"
+WEBHOOK_URL = "https://kabowd-n8n.fly.dev/"
+GENERIC_TIMEZONE = "Africa/Lome"
+DB_TYPE = "sqlite"
+DB_SQLITE_FILENAME = "/data/n8n.sqlite"
 
 [[services]]
 internal_port = 5678
