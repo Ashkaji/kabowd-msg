@@ -1,0 +1,46 @@
+# Fly.io Configuration for N8N
+
+app = "kabowd-n8n"
+primary_region = "iad"  # Northern Virginia (good for America)
+# Or use "ams" for Amsterdam, "cdg" for Paris (closer to Africa)
+
+[build]
+dockerfile = "./n8n/Dockerfile"
+
+[env]
+N8N_HOST = "kabowd-n8n.fly.dev"
+N8N_PORT = "5678"
+N8N_PROTOCOL = "https"
+WEBHOOK_URL = "https://kabowd-n8n.fly.dev/"
+GENERIC_TIMEZONE = "Africa/Lome"
+DB_TYPE = "sqlite"
+DB_SQLITE_FILENAME = "/data/n8n.sqlite"
+
+# Secrets are set via: flyctl secrets set -a kabowd-n8n ...
+# N8N_ENCRYPTION_KEY = (set via secrets)
+
+[[services]]
+internal_port = 5678
+processes = ["app"]
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 1
+
+[[services.ports]]
+port = 80
+handlers = ["http"]
+force_https = true
+
+[[services.ports]]
+port = 443
+handlers = ["tls", "http"]
+
+[services.concurrency]
+type = "connections"
+hard_limit = 25
+soft_limit = 20
+
+[[vm]]
+memory = "512mb"
+cpu_kind = "shared"
+cpus = 1
