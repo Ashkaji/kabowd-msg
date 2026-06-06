@@ -8,16 +8,13 @@ primary_region = "iad"  # Northern Virginia (good for America)
 dockerfile = "./n8n/Dockerfile"
 
 [env]
-N8N_HOST = "kabowd-n8n.fly.dev"
-N8N_PORT = "5678"
-N8N_PROTOCOL = "https"
-WEBHOOK_URL = "https://kabowd-n8n.fly.dev/"
-GENERIC_TIMEZONE = "Africa/Lome"
-DB_TYPE = "sqlite"
-DB_SQLITE_FILENAME = "/data/n8n.sqlite"
-
-# Secrets are set via: flyctl secrets set -a kabowd-n8n ...
-# N8N_ENCRYPTION_KEY = (set via secrets)
+N8N_HOST=kabowd-n8n.fly.dev
+N8N_PORT=5678
+N8N_PROTOCOL=https
+WEBHOOK_URL=https://kabowd-n8n.fly.dev/
+GENERIC_TIMEZONE=Africa/Lome
+DB_TYPE=sqlite
+DB_SQLITE_FILENAME=/data/n8n.sqlite
 
 [[services]]
 internal_port = 5678
